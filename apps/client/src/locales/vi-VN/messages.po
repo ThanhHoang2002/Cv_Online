@@ -1682,7 +1682,7 @@ msgstr "Bạn cũng có thể nhập tên người dùng của bạn."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:105
 msgid "You can integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens."
-msgstr ""
+msgstr "Bạn có thể tích hợp với Ollama đơn giản bằng cách thiết lập khóa API thành sk-1234567890abcdef và URL cơ sở (Base URL) thành URL Ollama của bạn, tức là http://localhost:11434/v1. Bạn cũng có thể chọn các mô hình và đặt số token tối đa."
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
 msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
