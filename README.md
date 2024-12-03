@@ -1,6 +1,6 @@
 Cách run project:
   1.  git clone:  https://github.com/ThanhHoang2002/Cv_Online.git
-                  cd Reactive-Resume
+                  cd Cv_Online
   2.  Install dependencies: pnpm install
     * Tải pnpm của node > 18
     * Nếu bị liên quan đến quyền thì chạy lệnh này để mở quyền: Set-ExecutionPolicy -Scope LocalMachine -ExecutionPolicy RemoteSigned
