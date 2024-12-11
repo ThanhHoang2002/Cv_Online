@@ -10,7 +10,6 @@ import { getSectionIcon } from "../shared/section-icon";
 export const TemplateSection = () => {
   const setValue = useResumeStore((state) => state.setValue);
   const currentTemplate = useResumeStore((state) => state.resume.data.metadata.template);
-
   return (
     <section id="template" className="grid gap-y-6">
       <header className="flex items-center justify-between">

@@ -22,6 +22,10 @@ msgstr ""
 msgid "You have enabled two-factor authentication successfully."
 msgstr "Bạn đã kích hoạt xác thực hai yếu tố thành công."
 
+#: apps/client/src/pages/dashboard/resumes/_layouts/grid/index.tsx
+msgid "Your resumes"
+msgstr "Hồ sơ của bạn"
+
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
 msgstr "{templatesCount} mẫu sơ yếu lý lịch để lựa chọn"

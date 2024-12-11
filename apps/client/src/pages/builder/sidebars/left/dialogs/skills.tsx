@@ -12,7 +12,6 @@ import {
   FormLabel,
   FormMessage,
   Input,
-  Slider,
 } from "@reactive-resume/ui";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
@@ -69,7 +68,7 @@ export const SkillsDialog = () => {
           )}
         />
 
-        <FormField
+        {/* <FormField
           name="level"
           control={form.control}
           render={({ field }) => (
@@ -81,10 +80,10 @@ export const SkillsDialog = () => {
                     {...field}
                     min={0}
                     max={5}
-                    value={[field.value]}
+                    value={[Number(field.value)]}
                     orientation="horizontal"
                     onValueChange={(value) => {
-                      field.onChange(value[0]);
+                      field.onChange(() => value[0]);
                     }}
                   />
 
@@ -98,7 +97,7 @@ export const SkillsDialog = () => {
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
 
         <FormField
           name="keywords"

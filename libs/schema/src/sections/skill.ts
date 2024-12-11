@@ -6,7 +6,7 @@ import { defaultItem, itemSchema } from "../shared";
 export const skillSchema = itemSchema.extend({
   name: z.string(),
   description: z.string(),
-  level: z.number().min(0).max(5).default(1),
+  level: z.number().min(0).max(0).default(0),
   keywords: z.array(z.string()).default([]),
 });
 
@@ -18,6 +18,6 @@ export const defaultSkill: Skill = {
   ...defaultItem,
   name: "",
   description: "",
-  level: 1,
+  level: 0,
   keywords: [],
 };

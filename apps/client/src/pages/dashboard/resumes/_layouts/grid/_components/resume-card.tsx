@@ -71,6 +71,11 @@ export const ResumeCard = ({ resume }: Props) => {
               </motion.div>
             )}
           </AnimatePresence>
+          <img
+            src={`/templates/jpg/${resume.data.metadata.template}.jpg`}
+            alt={resume.data.metadata.template}
+            className="rounded-sm"
+          />
 
           <div
             className={cn(

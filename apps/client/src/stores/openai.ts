@@ -16,24 +16,32 @@ type OpenAIStore = {
 
 export const useOpenAiStore = create<OpenAIStore>()(
   persist(
-    (set) => ({
-      baseURL: null,
-      setBaseURL: (baseURL: string | null) => {
-        set({ baseURL });
-      },
-      apiKey: null,
-      setApiKey: (apiKey: string | null) => {
-        set({ apiKey });
-      },
-      model: DEFAULT_MODEL,
-      setModel: (model: string | null) => {
-        set({ model });
-      },
-      maxTokens: DEFAULT_MAX_TOKENS,
-      setMaxTokens: (maxTokens: number | null) => {
-        set({ maxTokens });
-      },
-    }),
+    (set) => {
+      set({
+        baseURL: "http://localhost:11434/v1",
+        apiKey: "sk-1234567890abcdef",
+        model: DEFAULT_MODEL,
+        maxTokens: DEFAULT_MAX_TOKENS,
+      });
+      return {
+        baseURL: "http://localhost:11434/v1",
+        setBaseURL: (baseURL: string | null) => {
+          set({ baseURL });
+        },
+        apiKey: "sk-1234567890abcdef",
+        setApiKey: (apiKey: string | null) => {
+          set({ apiKey });
+        },
+        model: DEFAULT_MODEL,
+        setModel: (model: string | null) => {
+          set({ model });
+        },
+        maxTokens: DEFAULT_MAX_TOKENS,
+        setMaxTokens: (maxTokens: number | null) => {
+          set({ maxTokens });
+        },
+      };
+    },
     { name: "openai" },
   ),
 );

@@ -4,10 +4,13 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
+import { useOpenAiStore } from "@/client/stores/openai";
+
 import { Sidebar } from "./_components/sidebar";
 
 export const DashboardLayout = () => {
   const [open, setOpen] = useState(false);
+  useOpenAiStore();
 
   return (
     <div>
@@ -36,7 +39,7 @@ export const DashboardLayout = () => {
         animate={{ x: 0 }}
         className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-[320px] lg:flex-col"
       >
-        <div className="h-full rounded p-4">
+        <div className="h-full rounded border-r-2 p-4">
           <Sidebar />
         </div>
       </motion.div>

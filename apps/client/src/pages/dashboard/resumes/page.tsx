@@ -1,9 +1,9 @@
 import { t } from "@lingui/macro";
 import { List, SquaresFour } from "@phosphor-icons/react";
 import { ScrollArea, Tabs, TabsContent, TabsList, TabsTrigger } from "@reactive-resume/ui";
-import { motion } from "framer-motion";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 import { GridView } from "./_layouts/grid";
 import { ListView } from "./_layouts/list";
@@ -29,13 +29,9 @@ export const ResumesPage = () => {
         }}
       >
         <div className="flex items-center justify-between">
-          <motion.h1
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-4xl font-bold tracking-tight"
-          >
-            {t`Resumes`}
-          </motion.h1>
+          <Link to="/" className="text-4xl font-bold tracking-tight">
+            {t`CvOnline`}
+          </Link>
 
           <TabsList>
             <TabsTrigger value="grid" className="size-8 p-0 sm:h-8 sm:w-auto sm:px-4">
