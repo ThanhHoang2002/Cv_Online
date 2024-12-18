@@ -1,3 +1,4 @@
+/* eslint-disable lingui/no-unlocalized-strings */
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -19,7 +20,7 @@ export const useOpenAiStore = create<OpenAIStore>()(
     (set) => {
       set({
         baseURL: "http://localhost:11434/v1",
-        apiKey: "sk-1234567890abcdef",
+        apiKey: "AIzaSyA7cYPdlRdlPiDhOTRjUKqBPIfnUxgyyWM",
         model: DEFAULT_MODEL,
         maxTokens: DEFAULT_MAX_TOKENS,
       });
@@ -28,7 +29,7 @@ export const useOpenAiStore = create<OpenAIStore>()(
         setBaseURL: (baseURL: string | null) => {
           set({ baseURL });
         },
-        apiKey: "sk-1234567890abcdef",
+        apiKey: "AIzaSyA7cYPdlRdlPiDhOTRjUKqBPIfnUxgyyWM",
         setApiKey: (apiKey: string | null) => {
           set({ apiKey });
         },

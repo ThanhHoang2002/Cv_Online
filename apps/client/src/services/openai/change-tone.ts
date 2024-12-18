@@ -3,9 +3,6 @@
 import { detect, fromStorage, fromUrl } from "@lingui/detect-locale";
 import { t } from "@lingui/macro";
 
-import { DEFAULT_MAX_TOKENS, DEFAULT_MODEL } from "@/client/constants/llm";
-import { useOpenAiStore } from "@/client/stores/openai";
-
 import { openai } from "./client";
 const PROMPT = `You are an AI writing assistant professionally specialized in writing copy for resumes.
 Do not return anything else except the text you improved. It should not begin with a newline. It should not have any prefix or suffix text.
@@ -28,20 +25,11 @@ export const changeTone = async (text: string, mood: Mood) => {
   const prompt = (detectedLocale === "vi-VN" ? PROMPT_VI : PROMPT)
     .replace("{mood}", mood)
     .replace("{input}", text);
-  const { model, maxTokens } = useOpenAiStore.getState();
+  const result = await openai().generateContent(prompt);
 
-  const result = await openai().chat.completions.create({
-    messages: [{ role: "user", content: prompt }],
-    model: model ?? DEFAULT_MODEL,
-    max_tokens: maxTokens ?? DEFAULT_MAX_TOKENS,
-    temperature: 0.5,
-    stop: ['"""'],
-    n: 1,
-  });
-
-  if (result.choices.length === 0) {
+  if (result.response.text().length === 0) {
     throw new Error(t`OpenAI did not return any choices for your text.`);
   }
 
-  return result.choices[0].message.content ?? text;
+  return result.response.text();
 };
